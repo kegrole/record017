@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "files": 4,
+    "private_keys": 3,
+    "public_keys": 0,
+    "certificates": 1,
+    "issues": 3
+  },
+  "records": [
+    {
+      "file": "legacy/key.pem",
+      "kind": "private_key",
+      "bits": 1024,
+      "encrypted": false,
+      "permission": "0600",
+      "issues": [
+        {
+          "code": "WEAK_KEY",
+          "detail": "RSA modulus is 1024 bits; minimum is 2048"
+        }
+      ]
+    },
+    {
+      "file": "main/key.pem",
+      "kind": "private_key",
+      "bits": 2048,
+      "encrypted": false,
+      "permission": "0644",
+      "issues": [
+        {
+          "code": "PERMISSION_TOO_OPEN",
+          "detail": "private key file mode 0644 is readable by group/other"
+        }
+      ]
+    },
+    {
+      "file": "web/cert.pem",
+      "kind": "certificate",
+      "bits": 2048,
+      "encrypted": false,
+      "permission": "0644",
+      "issues": [],
+      "subject": "C=CN, O=Keyaudit Demo, CN=demo.example.com",
+      "issuer": "C=CN, O=Keyaudit Demo, CN=demo.example.com",
+      "not_before": "2026-11-12T18:07:11Z",
+      "not_after": "2029-02-15T18:07:11Z"
+    },
+    {
+      "file": "web/key.pem",
+      "kind": "private_key",
+      "bits": 2048,
+      "encrypted": false,
+      "permission": "0600",
+      "issues": [
+        {
+          "code": "UNMATCHED_KEY",
+          "detail": "no certificate in the same directory matches this private key"
+        }
+      ]
+    }
+  ]
+}
